@@ -2,9 +2,6 @@
 
 set -e -u
 
-sudo apt-get -qq update
-apt-get install python-sphinx
-
 if [[ "$TRAVIS_REPO_SLUG" == "perfectsense/"* ]] && \
    [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 
