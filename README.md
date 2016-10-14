@@ -22,6 +22,8 @@ to `sudo` usage.
 S3 does not support the index of your static site being inside of a subdirectory, to accomplish this, you can upload
 an empty index.html file into the root of your bucket, and setup a redirect to your index.html inside of your folder.
 
+![image](https://cloud.githubusercontent.com/assets/1299507/19402314/84e1e452-922e-11e6-89a3-5c3579503a10.png)
+
 ## Script
 
 Performs the following actions:
