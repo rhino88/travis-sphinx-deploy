@@ -2,9 +2,15 @@
 
 set -e -u
 
+# Sphinx Build
 sudo pip install --upgrade pip
 sudo pip install sphinx
 make html
+
+# S3 Deploy
+sudo pip install awscli
+aws s3 sync _build/html s3://$AWS_BUCKET/latest
+
 
 
 # if [[ "$TRAVIS_REPO_SLUG" == "perfectsense/"* ]] && \

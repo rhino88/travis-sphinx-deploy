@@ -7,5 +7,7 @@ to `sudo` usage.
 
 Performs the following actions:
 
-Runs gulp
-Deploys files to S3
+Updates pip
+Installs sphinx
+Runs Sphinx
+Deploys Sphinx site to S3
