@@ -1,9 +1,28 @@
 # Travis Sphinx Deploy
 
-Setup:
+##Setup
+
+**S3**
+
+1. Create an S3 Bucket (save your credentials for Travis!)
+
+**Travis**
 
 This script requires that your build has `sudo: required` in your .travis.yml due
 to `sudo` usage.
+
+1. Add `sudo: required` to your .travis.yml (sudo is required to install sphinx etc.)
+2. Set Travis environment variables: 
+    * AWS_ACCESS_KEY_ID (with your aws access key)
+    * AWS_SECRET_ACCESS_KEY (with your aws secret key)
+    * AWS_BUCKET (with your bucket name)
+
+**Setup Redirect**
+
+S3 does not support the index of your static site being inside of a subdirectory, to accomplish this, you can upload
+an empty index.html file into the root of your bucket, and setup a redirect to your index.html inside of your folder.
+
+## Script
 
 Performs the following actions:
 
