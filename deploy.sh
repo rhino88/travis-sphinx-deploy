@@ -2,6 +2,7 @@
 
 set -e -u
 
+pip install sphinx
 make html
 
 
