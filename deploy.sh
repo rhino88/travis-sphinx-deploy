@@ -2,24 +2,28 @@
 
 set -e -u
 
-if [[ "$TRAVIS_REPO_SLUG" == "perfectsense/"* ]] && \
-   [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+git fetch --unshallow || true
+make html
 
-  if [[ "$TRAVIS_BRANCH" == "release/"* ]]; then
 
-    echo "Preparing Documentation RELEASE"
-    git fetch --unshallow || true
-    make html
+# if [[ "$TRAVIS_REPO_SLUG" == "perfectsense/"* ]] && \
+#    [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 
-    echo "Deploying Documentation RELEASE to S3"
-  fi
+#   if [[ "$TRAVIS_BRANCH" == "release/"* ]]; then
 
-  if [[ "$TRAVIS_BRANCH" == "patch/"* ]]; then
+#     echo "Preparing Documentation RELEASE"
+#     git fetch --unshallow || true
+#     make html
 
-    echo "Preparing Documentation PATCH..."
-    git fetch --unshallow || true
-    make html
+#     echo "Deploying Documentation RELEASE to S3"
+#   fi
 
-    echo "Deploying Documentation PATCH to S3"
-  fi
-fi
+#   if [[ "$TRAVIS_BRANCH" == "patch/"* ]]; then
+
+#     echo "Preparing Documentation PATCH..."
+#     git fetch --unshallow || true
+#     make html
+
+#     echo "Deploying Documentation PATCH to S3"
+#   fi
+# fi
