@@ -2,8 +2,8 @@
 
 set -e -u
 
-pip install --upgrade pip
-pip install sphinx
+sudo pip install --upgrade pip
+sudo pip install sphinx
 make html
 
 
