@@ -2,7 +2,6 @@
 
 set -e -u
 
-git fetch --unshallow || true
 make html
 
 
